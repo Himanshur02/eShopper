@@ -1,0 +1,11 @@
+.search_box input {
+    background-image: none;
+
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+}

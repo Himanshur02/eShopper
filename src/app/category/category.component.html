@@ -1,0 +1,59 @@
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Categories</li>
+            </ol>
+        </div>
+        <form [formGroup]="searchForm" (ngSubmit)="searchCategory()" class="search_box">
+            <input type="text" placeholder="Search.." formControlName="searchKeywords">
+            <button type="submit"> <span class="glyphicon glyphicon-search"></span></button>
+          </form>
+       
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Category Name</td>
+                        <td class="item">Description</td>
+                        <td class="description">Status</td>
+                        <td class="description">Action</td>
+                       
+                    </tr>
+                </thead>
+                <h4>{{notMatched}}</h4>   <!-- No Category Found  -->
+                <tbody *ngIf="!submitted">   
+                    <tr *ngFor="let category of categories">
+                        <td class="cart_price">
+                            <p class="categoryId">{{category.categoryName}}</p>
+                        </td>
+                        <td class="cart_price">
+                            <p>{{category.description}}</p>
+                        </td>
+                        <td class="cart_price">
+                            <p>{{category.status}}</p>
+                        </td>
+                        <td class="cart_total">
+                            <button type="button"  (click)="updateCategory(category._id)"class="btn btn-warning btn-sm" >Edit</button> 
+                            <button type="button" (click)="deleteCategory(category._id)" class="btn btn-danger btn-sm">Delete</button>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <ul class="pagination">
+                <li class="active"><a href="category/1">1</a></li>
+                <li><a href="category/2">2</a></li>
+                <li><a href="category/3">3</a></li>
+                <li><a href="category/4">4</a></li>
+                <li><a href="category/5">5</a></li>
+                <li><a href="">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</section> <!--/#cart_items-->
+
+

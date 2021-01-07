@@ -1,0 +1,27 @@
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="signup-form"><!--Add Product form-->
+                    <h2>Add Product</h2>
+                    <form [formGroup]="productForm" (ngSubmit)="addPrduct()" enctype="multipart/form-data">
+                        <input type="text" formControlName="productName"  placeholder="Product Name" />
+                        <input type="text" formControlName="description" placeholder="Description"/>       
+                        <input type="text" formControlName="quantity" placeholder="Quantity"/>
+                        <span>Choose Category :</span> <br/>
+                        <select formControlName="category">
+                            <option value="" ></option>
+                            <option value="Mens">Mens</option>
+                            <option value="Womens">Womens</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Clothes">Clothes</option>
+                        </select>
+                        <input type="file" formControlName="image" placeholder="Product Image"/>      
+                        <input type="price" formControlName="price" placeholder="Price" /> 
+                        <button type="submit" class="btn btn-default">Add</button>
+                    </form>
+                </div><!-- / Add Product form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

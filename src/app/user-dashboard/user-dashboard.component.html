@@ -1,0 +1,111 @@
+<div class="container emp-profile">
+    <form (submit)="onSubmit()">
+        <div class="container emp-profile">
+            <form  >
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <h2 class="adminDash">User Dashboard</h2>
+                             <!-- <h2>File Upload</h2> -->
+                             <div >
+                                <img [src]="Imageurl" alt="Image" height="200" width="200"/>
+                            </div>  
+                            <div class="file">
+                                Change Photo
+                                <input type="file"  >                       
+                           </div>                                                          
+                        </div>                       
+                    </div>
+                           
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h3>
+                                        {{firstName}} {{lastName}}
+                                       
+                                    </h3>
+                                    
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <div class="logout"> 
+                                        <button type="submit" data-toggle="modal" data-target="#myModal" >Order Product</button> &nbsp;   
+                               
+                                        <button type="button" (click)="Logout()">Logout</button>
+                                        </div>               
+                                    </li>
+                               
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-2">
+                       <button type="button" >Change Password</button>              
+                    </div>
+                   
+                </div>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- <div class="profile-work">
+                    <p>Order</p>
+                    <a href="">SmartData Enterprises</a><br/>
+                    <a href="">Git Profile</a><br/>
+                    <p>SKILLS</p>        
+                    <a href="">WordPress</a><br/>
+                    <a href="">MEAN Stack</a><br/>
+                </div> -->
+            </div>
+        <div class="bio">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>User Details</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <p></p>
+                            </div>
+                            
+                           
+                        </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{firstName}} {{lastName}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{email}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Phase-5 Mohali</p>
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>8171630747</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>           
+    </div>
+
+

@@ -1,0 +1,23 @@
+<section id="form"><!--form-->
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form"><!--login form-->
+                    <h2>Admin Login</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <input type="email"  formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && formError.email.errors }" required />
+                        <div *ngIf="submitted && formError.email.errors" class="alert-warning">
+                            <div *ngIf="formError.email.errors.required">Username is required</div>
+                        </div>
+                        <input type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && formError.password.errors }" required  />
+                        <div *ngIf="submitted && formError.password.errors" class="alert-warning">
+                            <div *ngIf="formError.password.errors.required">Password is required</div>
+                            <div *ngIf="formError.password.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                </div><!--/login form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

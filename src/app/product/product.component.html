@@ -1,0 +1,132 @@
+<section id="advertisement">
+    <div class="container">
+        <img src="../../assets/images/shop/advertisement.jpg" alt="" />
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <!-- <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Sportswear
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="sportswear" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="">Nike </a></li>
+                                        <li><a href="">Under Armour </a></li>
+                                        <li><a href="">Adidas </a></li>
+                                        <li><a href="">Puma</a></li>
+                                        <li><a href="">ASICS </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="panel panel-default" *ngFor="let productCount of productCounts">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a >{{productCount}}</a> </h4>
+                            </div>
+                        </div>
+                
+                        <div class="panel panel-default" *ngFor="let category of categories">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a (click)="showProductsByCategory(category.categoryName)">{{category.categoryName}}</a> </h4>
+                            </div>
+                        </div>
+                    
+                    </div><!--/category-productsr-->
+                
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
+                                <li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                                <li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
+                                <li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
+                                <li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
+                                <li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+                                <li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+                    
+                    <div class="price-range"><!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well">
+                             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+                             <b>$ 0</b> <b class="pull-right">$ 600</b>
+                        </div>
+                    </div><!--/price-range-->
+                    
+                    <div class="shipping text-center"><!--shipping-->
+                        <img src="../../assets/images/home/shipping.jpg" alt="" />
+                    </div><!--/shipping-->
+                    
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="search_box pull-right">
+                    <form [formGroup]="searchForm" (ngSubmit)="searchProduct()" class="search_box">
+                        <input type="text" placeholder="Search.." formControlName="searchKeywords">
+                        <button type="submit"> <span class="glyphicon glyphicon-search"></span></button>
+                      </form>
+                </div>
+            </div>
+            <div class="col-sm-9 padding-right">
+                <div class="features_items"><!--features_items-->
+                    <h2 class="title text-center">Our Features Products</h2>
+                    <h4 class="text-center">{{notMatched}}</h4> 
+                    <div *ngIf="!submitted">
+                    <div class="col-sm-4"  *ngFor="let product of products">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="../../assets/images/shop/product12.jpg" alt="" />
+                                    <h2>${{ product.price }}</h2>
+                                    <p> {{ product.productName }}</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View Details</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <img src="../../assets/images/shop/product12.jpg" alt="" />
+                                        <h2>${{ product.price }}</h2>
+                                        <p> {{ product.productName }}</p>
+                                        <a  href="productDetails/{{product._id }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li ><a href="updateProduct/{{product._id}}"><span><i class="fa fa-plus-square"></i>Edit</span></a></li>
+                                    <li ><a href="product"><span  (click)="deleteProduct(product._id)"><i class="fa fa-plus-square"></i>Delete</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div><!--features_items-->
+                <ul class="pagination">
+                    <li class="active"><a href="product/1">1</a></li>
+                    <li><a href="product/2">2</a></li>
+                    <li><a href="product/3">3</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+   
+</section>

@@ -1,0 +1,9 @@
+span {
+    color: #696763;
+    padding-left: 25px;
+}
+
+.user_info input, select, textarea {
+    margin-bottom: 20px;
+    width: auto;
+}

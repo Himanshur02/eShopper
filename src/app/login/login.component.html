@@ -1,0 +1,39 @@
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form"><!--login form-->
+                    <h2>Login to your account</h2>
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <input type="email" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <input type="password" formControlName="password"  placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  />
+                        <button type="submit" class="btn btn-default">Sign-in</button>
+                    </form>
+                </div><!--/login form-->
+            </div>
+            <div class="col-sm-1">
+                <h2 class="or">OR</h2>
+            </div>
+            <div class="col-sm-4">
+                <div class="signup-form"><!--sign up form-->
+                    <h2>New User Sign-up!</h2>
+                    <form [formGroup]="registerForm" (ngSubmit)="addUser()">
+                        <input type="text" formControlName="firstName" placeholder="Firstname"/>
+                        <input type="text" formControlName="lastName" placeholder="Lastname"/>
+                        <input type="email" formControlName="email"  placeholder="Email"/>
+                        <input type="password" formControlName="password" placeholder="Password"/>
+                        <input type="file"  formControlName="image" placeholder="Profile Image" (change)="onFileSelect($event)" />
+                        <input type="text" formControlName="role" placeholder="Role" /> 
+                        <input type="text" formControlName="phone" placeholder="Phone" />
+                        <input type="text" formControlName="address" placeholder="Address" />
+                        <input type="text" formControlName="city" placeholder="City" /> 
+                        <input type="text" formControlName="state" placeholder="State" />
+                        <input type="text" formControlName="country" placeholder="Country" />
+                        <input type="text" formControlName="zip" placeholder="Zip" />
+                        <button type="submit" class="btn btn-default">Sign-up</button>
+                    </form>
+                </div><!--/sign up form-->
+            </div>
+        </div>
+    </div>
+</section><!--/form-->
